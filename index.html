@@ -3,10 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 주식 자동매매 봇</title>
+<title>AI 주식 자동매매 봇 | AI Stock Auto-Trading Bot</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>AI 주식 자동매매 봇</h1>
-<p>평일 오후 3시 30분, AI가 직접 매매한 결과를 공개합니다.</p>
+<header>
+  <h1>🤖 AI 주식 자동매매 봇</h1>
+  <p>평일 오후 3시 30분, AI가 직접 매매한 결과를 공개합니다 | Daily AI stock auto-trading journal, updated every weekday at 3:30 PM KST</p>
+</header>
+<nav>
+  <a href="index.html">홈 | Home</a>
+  <a href="about.html">소개 | About</a>
+</nav>
+<div class="container">
+  <div id="posts-container">
+    <p style="color:#888;text-align:center;padding:50px 0;">첫 번째 일지를 기다리는 중입니다 | Waiting for the first journal entry...</p>
+  </div>
+  <p class="disclaimer">
+    ※ 본 블로그는 AI 모의투자 자동매매 시스템의 학습 및 기록 목적으로 운영됩니다.<br>
+    투자 권유가 아니며 모든 투자 책임은 본인에게 있습니다.<br>
+    This blog is for educational purposes only. Not financial advice.
+  </p>
+</div>
+<footer>© 2026 AI 주식 자동매매 봇 | AI Stock Auto-Trading Bot | formula82</footer>
+<script>
+fetch('posts/index.json')
+  .then(r=>r.json())
+  .then(posts=>{
+    const c=document.getElementById('posts-container');
+    if(!posts.length){c.innerHTML='<p style="color:#888;text-align:center;padding:50px 0;">아직 매매 일지가 없습니다.</p>';return;}
+    c.innerHTML=posts.map(p=>`
+      <div class="post-card">
+        <div class="post-date">${p.date}</div>
+        <div class="post-title"><a href="posts/${p.file}">${p.title}</a></div>
+        <div class="post-summary">${p.summary}</div>
+        <div>${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <br><a href="posts/${p.file}" class="read-more">자세히 보기 | Read more →</a>
+      </div>`).join('');
+  }).catch(()=>{});
+</script>
 </body>
 </html>
