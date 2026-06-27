@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>테마분석 | Theme Analysis</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>🤖 AI 주식 자동매매 봇</h1>
+  <p>통계와 AI가 만든 자동매매 시스템 | A data-driven AI stock trading system</p>
+</header>
+<nav>
+  <a href="../index.html">소개 | About</a>
+  <a href="../morning/index.html">아침전망 | Morning</a>
+  <a href="../theme/index.html">테마분석 | Theme</a>
+  <a href="../trades/index.html">매매결과 | Trades</a>
+  <a href="../research/index.html">리서치 | Research</a>
+</nav>
+<div class="container">
+  <h2 style="color:#1a365d;margin-bottom:20px;">🎯 테마분석 | Theme Analysis</h2>
+  <p style="color:#718096;margin-bottom:30px;">매일 오전 9시 30분, AI가 선정한 오늘의 주도 테마입니다.<br>
+  Every day at 9:30AM, AI-selected leading themes.</p>
+  <div id="posts-container">
+    <p style="color:#888;text-align:center;padding:50px 0;">포스트를 불러오는 중... | Loading posts...</p>
+  </div>
+</div>
+<footer>© 2026 AI 주식 자동매매 봇 | formula82</footer>
+<script>
+fetch('index.json').then(r=>r.json()).then(posts=>{
+  const c = document.getElementById('posts-container');
+  if(!posts.length){c.innerHTML='<p style="color:#888;text-align:center;padding:50px 0;">첫 번째 포스트를 기다리는 중입니다 | Waiting for the first post...</p>';return;}
+  c.innerHTML = posts.map(p=>`
+    <div class="post-card">
+      <div class="post-date">${p.date}</div>
+      <div class="post-title"><a href="${p.file}">${p.title}</a></div>
+      <div class="post-summary">${p.summary}</div>
+      <div style="margin-top:10px;">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}).catch(()=>{
+  document.getElementById('posts-container').innerHTML='<p style="color:#888;text-align:center;padding:50px 0;">첫 번째 포스트를 기다리는 중입니다 | Waiting for the first post...</p>';
+});
+</script>
+</body>
+</html>

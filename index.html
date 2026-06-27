@@ -10,40 +10,88 @@
 <body>
 <header>
   <h1>🤖 AI 주식 자동매매 봇</h1>
-  <p>평일 오후 3시 30분, AI가 직접 매매한 결과를 공개합니다 | Daily AI stock auto-trading journal, updated every weekday at 3:30 PM KST</p>
+  <p>통계와 AI가 만든 자동매매 시스템 | A data-driven AI stock trading system</p>
 </header>
 <nav>
-  <a href="index.html">홈 | Home</a>
-  <a href="research.html">리서치 | Research</a>
-  <a href="research.html">리서치 | Research</a>
-  <a href="about.html">소개 | About</a>
+  <a href="index.html">소개 | About</a>
+  <a href="morning/index.html">아침전망 | Morning</a>
+  <a href="theme/index.html">테마분석 | Theme</a>
+  <a href="trades/index.html">매매결과 | Trades</a>
+  <a href="research/index.html">리서치 | Research</a>
 </nav>
 <div class="container">
-  <div id="posts-container">
-    <p style="color:#888;text-align:center;padding:50px 0;">첫 번째 일지를 기다리는 중입니다 | Waiting for the first journal entry...</p>
+
+  <div class="post-card" style="text-align:center;padding:40px;">
+    <div style="font-size:4em;margin-bottom:20px;">🤖</div>
+    <h2 style="color:#1a365d;margin-bottom:15px;">AI 주식 자동매매 봇</h2>
+    <p style="color:#718096;line-height:2;font-size:1.05em;">
+      수익률이 다소 낮더라도 <strong>잃지 않는 투자</strong>를 최우선으로 지향합니다.<br>
+      AI와 통계 기반의 자동매매 시스템이 매일 한국 주식시장을 분석하고 매매합니다.<br>
+      모든 결과는 있는 그대로 이 블로그에 기록됩니다.<br><br>
+      We prioritize <strong>capital preservation</strong> over maximizing returns.
+    </p>
   </div>
-  <p class="disclaimer">
-    ※ 본 블로그는 AI 모의투자 자동매매 시스템의 학습 및 기록 목적으로 운영됩니다.<br>
-    투자 권유가 아니며 모든 투자 책임은 본인에게 있습니다.<br>
-    This blog is for educational purposes only. Not financial advice.
-  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px;">
+    <a href="morning/index.html" style="text-decoration:none;">
+      <div class="post-card" style="text-align:center;padding:30px;transition:all 0.3s;">
+        <div style="font-size:2.5em;margin-bottom:10px;">🌅</div>
+        <div style="color:#1a365d;font-weight:bold;font-size:1.1em;">아침전망</div>
+        <div style="color:#718096;font-size:0.9em;margin-top:8px;">매일 09:00 시장 전망</div>
+      </div>
+    </a>
+    <a href="theme/index.html" style="text-decoration:none;">
+      <div class="post-card" style="text-align:center;padding:30px;">
+        <div style="font-size:2.5em;margin-bottom:10px;">🎯</div>
+        <div style="color:#1a365d;font-weight:bold;font-size:1.1em;">테마분석</div>
+        <div style="color:#718096;font-size:0.9em;margin-top:8px;">매일 09:30 테마 스캔</div>
+      </div>
+    </a>
+    <a href="trades/index.html" style="text-decoration:none;">
+      <div class="post-card" style="text-align:center;padding:30px;">
+        <div style="font-size:2.5em;margin-bottom:10px;">💰</div>
+        <div style="color:#1a365d;font-weight:bold;font-size:1.1em;">매매결과</div>
+        <div style="color:#718096;font-size:0.9em;margin-top:8px;">매일 15:35 매매 일지</div>
+      </div>
+    </a>
+    <a href="research/index.html" style="text-decoration:none;">
+      <div class="post-card" style="text-align:center;padding:30px;">
+        <div style="font-size:2.5em;margin-bottom:10px;">📊</div>
+        <div style="color:#1a365d;font-weight:bold;font-size:1.1em;">리서치</div>
+        <div style="color:#718096;font-size:0.9em;margin-top:8px;">격주 통계 분석</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="post-card" style="margin-top:10px;">
+    <div class="section-title">🖥️ 운용 시스템 | System</div>
+    <div class="bilingual">
+      <span class="ko">하드웨어</span>
+      <span class="en">AOOSTAR GEM12 Pro (AMD Ryzen 7 8845HS, DDR5 32GB, RX 9070 XT 16GB)</span>
+    </div>
+    <div class="bilingual">
+      <span class="ko">AI 엔진</span>
+      <span class="en">로컬 LLM (Qwen3 기반) + 통계 분석 엔진</span>
+    </div>
+    <div class="bilingual">
+      <span class="ko">운용 방식</span>
+      <span class="en">모의투자 | Paper Trading (시작: 2026년 6월 30일)</span>
+    </div>
+    <div class="bilingual">
+      <span class="ko">투자 철학</span>
+      <span class="en">수익률보다 손실 최소화 우선 | Capital preservation first</span>
+    </div>
+  </div>
+
+  <div class="post-card" style="background:#fff8f0;border-color:#fed7aa;">
+    <p style="color:#718096;font-size:0.9em;line-height:1.8;text-align:center;">
+      ※ 본 블로그는 AI 자동매매 시스템의 학습 및 기록 목적으로 운영됩니다.
+      투자 권유가 아니며 모든 투자 책임은 본인에게 있습니다.<br>
+      This blog is for educational purposes only. Not financial advice.
+    </p>
+  </div>
+
 </div>
 <footer>© 2026 AI 주식 자동매매 봇 | AI Stock Auto-Trading Bot | formula82</footer>
-<script>
-fetch('posts/index.json')
-  .then(r=>r.json())
-  .then(posts=>{
-    const c=document.getElementById('posts-container');
-    if(!posts.length){c.innerHTML='<p style="color:#888;text-align:center;padding:50px 0;">아직 매매 일지가 없습니다.</p>';return;}
-    c.innerHTML=posts.map(p=>`
-      <div class="post-card">
-        <div class="post-date">${p.date}</div>
-        <div class="post-title"><a href="posts/${p.file}">${p.title}</a></div>
-        <div class="post-summary">${p.summary}</div>
-        <div>${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        <br><a href="posts/${p.file}" class="read-more">자세히 보기 | Read more →</a>
-      </div>`).join('');
-  }).catch(()=>{});
-</script>
 </body>
 </html>
