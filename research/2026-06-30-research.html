@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>개발 로그 | Development Log - AI 주식 자동매매 봇</title>
+<title>연구과제 주간 요약 | Research Summary - AI 주식 자동매매 봇</title>
 <link rel="stylesheet" href="../css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -19,36 +19,47 @@
 </nav>
 <div class="container">
   <div class="post-card">
-    <div class="post-date">2026-06-30 | Development Log</div>
-    <div class="post-title">📒 개발 로그 — 계측 인프라 구축</div>
+    <div class="post-date">2026-06-30 | Weekly Research Summary</div>
+    <div class="post-title">🔬 연구과제 주간 요약</div>
     <div class="post-summary">
-      전략은 바꾸지 않았다. 시장을 더 잘 관찰할 수 있도록 계측 장치를 추가했다.<br>
-      No strategy changes today — only added instrumentation to observe the market better.
+      진입 전략(선별·매수타이밍) 3건, Exit Engine 실험 27건 진행 중입니다.<br>
+      3 entry strategy hypotheses and 27 exit engine experiments in progress.
     </div>
 
     <div class="section">
-      <div class="section-title">✅ 오늘의 작업 | Today's Work</div>
-      <ul style="color:#4a5568;line-height:2.1;">
-        <li>장세 전환 즉시 후보 재평가 (P001) — SIDEWAYS→UP 전환 시 캐시 후보 즉시 재평가, 검증 진행 중</li>
-        <li>decision_log 테이블 추가 — 매수/보류/거부 사유 전수 기록</li>
-        <li>매수 퍼널 자동 집계 — 장 마감 후 단계별 통과 종목수 SQLite 저장</li>
-        <li>테마 순위 일일 기록 — theme_rank_log 추가, 테마 확장 여부 추후 데이터 기반 판단</li>
-        <li>업종(industry) · 시장구분(market_type) 컬럼 추가 — 테마별/업종별 EV 교차분석 인프라</li>
-      </ul>
+      <div class="section-title">📌 진입 전략 연구 (선별·매수타이밍)</div>
+      <table>
+        <tr><th>ID</th><th>분류</th><th>상태</th><th>가설</th></tr>
+        
+        <tr>
+          <td>🟡 P001</td>
+          <td>2단계_매수타이밍</td>
+          <td>검증중</td>
+          <td style="font-size:0.9em;color:#4a5568;">장세 전환(SIDEWAYS/DOWN→UP)을 10분 주기 샘플링 대신 30초 단위로 즉시 감지하여 캐시된 후보를 재평가하면, 샘플링 주기 때문에 놓치던 매수 기회가 감소한다.</td>
+        </tr>
+        <tr>
+          <td>⚪ P002</td>
+          <td>1단계_종목선별</td>
+          <td>관찰대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">테마 1위 소속 조건이 테마 평균 점수 기반이라, 테마 평균은 약해도 개별 종목이 압도적으로 강한 경우(대형계약 등 종목 고유 이슈) 매수 기회를 구조적으로 놓친다.</td>
+        </tr>
+        <tr>
+          <td>⚪ P003</td>
+          <td>1단계_기준재정의</td>
+          <td>검토대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">SIDEWAYS 장세 정의를 코스피/코스닥 등락률 기반 점수에서 변동성 기반(ATR 감소, HV20, 볼린저밴드 폭 축소)으로 전환 시 더 정확한 횡보장 포착이 가능하다.</td>
+        </tr>
+      </table>
     </div>
 
     <div class="section">
-      <div class="section-title">🟡 검증 중인 가설 | Hypothesis Under Review</div>
-      <div style="background:#fffaf0;border-left:4px solid #dd6b20;padding:15px;border-radius:4px;color:#2d3748;">
-        <b>P001</b>: 장세 전환을 즉시 감지하여 후보를 재평가하면, 샘플링 주기(10분) 때문에 놓치던
-        매수 기회가 줄어들 것이다.<br>
-        상태: 🟡 검증 진행 중 (충분한 거래 건수 축적 후 EV 비교 예정)
-      </div>
+      <div class="section-title">📊 Exit Engine 연구 현황</div>
+      <p style="color:#4a5568;">총 27개 실험 — 무효 1건 · 채택 3건 · 폐기 1건 · 보류 22건</p>
     </div>
   </div>
   <p class="disclaimer">
-    ※ 본 글은 개발 진행 상황 기록이며 투자 수익을 의미하지 않습니다.<br>
-    This is a development log entry, not an investment performance report.
+    ※ 본 글은 연구 진행 상황 자동 요약이며 투자 수익을 의미하지 않습니다.<br>
+    This is an automated research progress summary, not an investment performance report.
   </p>
 </div>
 <footer>© 2026 AI 주식 자동매매 봇 | AI Stock Auto-Trading Bot | formula82</footer>
