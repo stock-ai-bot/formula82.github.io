@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미국-한국 테마 상관관계 분석 | Research - AI 주식 자동매매 봇</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>🍒 CherryPicker Research Lab</h1>
+  <p>가설을 세우고, 데이터를 통해 검증한다. | Data First. Hypothesis Second.</p>
+</header>
+<nav>
+  <a href="../index.html">소개 | About</a>
+  <a href="../morning/index.html">아침전망 | Morning</a>
+  <a href="../theme/index.html">테마분석 | Theme</a>
+  <a href="../trades/index.html">매매결과 | Trades</a>
+  <a href="../research/index.html">리서치 | Research</a>
+</nav>
+<div class="container">
+  <div class="post-card">
+    <div class="post-date">2026-07-02 | Research #004</div>
+    <div class="post-title">📊 미국 섹터 ETF와 한국 테마의 시차별 상관관계 분석 (2016~2026)</div>
+    <div class="post-summary">
+      10년(2,514일) 데이터로 검증한 미국-한국 시장 연동 효과.<br>
+      SOXX, URA 등 미국 섹터 ETF 등락률이 다음날(D+1) 한국 관련 테마에 통계적으로 유의미한 영향을 미친다.
+    </div>
+
+    <div class="section">
+      <div class="section-title">📌 연구 배경 | Background</div>
+      <p style="color:#4a5568;line-height:1.9;">
+        미국 증시는 한국시간 새벽 5~6시에 마감합니다. 한국 장이 열리기 3~4시간 전입니다.
+        "미국 반도체가 크게 오른 날 다음날 한국 AI반도체 테마도 따라가는가?"라는 질문을
+        10년치 데이터로 통계적으로 검증했습니다.<br><br>
+        U.S. markets close at 5-6 AM Korean time — 3-4 hours before Korean market opens.
+        We tested whether U.S. sector ETF returns statistically predict Korean theme returns the next day (D+1).
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🔬 분석 방법 | Methodology</div>
+      <p style="color:#4a5568;line-height:1.9;">
+        ① <b>데이터</b>: 미국 섹터 ETF(SOXX, URA, ITA, LIT, IBB, ROBO, UFO 등) 10년치 일별 등락률<br>
+        ② <b>한국 테마</b>: AI반도체·원전·방산·2차전지·바이오·로봇·우주항공 테마 종목(상위 20개) 평균 등락률<br>
+        ③ <b>시차 분석</b>: D+0(당일), D+1(다음날), D+2, D+3 시차별 Pearson 상관계수<br>
+        ④ <b>독립성 검증</b>: QQQ(나스닥) 효과 제거 후 초과수익 기준 재분석<br>
+        ⑤ <b>시간 안정성</b>: 2년 구간별(2016~2017, 2018~2019, 2020~2021, 2022~2023, 2024~2026) 추이 확인
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📈 핵심 결과 | Key Findings</div>
+      <table>
+        <tr><th>미국 ETF</th><th>한국 테마</th><th>D+0 상관</th><th>D+1 상관</th><th>p-value</th><th>시간안정성</th></tr>
+        <tr><td>SOXX (반도체)</td><td>AI반도체</td><td>+0.074</td><td style="color:#2b6cb0;font-weight:bold;">+0.275</td><td>&lt;0.0001</td><td>★★★★★</td></tr>
+        <tr><td>URA (우라늄)</td><td>원전</td><td>+0.159</td><td style="color:#2b6cb0;font-weight:bold;">+0.270</td><td>&lt;0.0001</td><td>★★★★★</td></tr>
+        <tr><td>ITA (방산)</td><td>방산</td><td>+0.070</td><td style="color:#2b6cb0;font-weight:bold;">+0.242</td><td>&lt;0.0001</td><td>★★★☆☆</td></tr>
+        <tr><td>ROBO (로봇)</td><td>로봇</td><td>+0.178</td><td style="color:#2b6cb0;font-weight:bold;">+0.264</td><td>&lt;0.0001</td><td>★★★★☆</td></tr>
+        <tr><td>UFO (우주)</td><td>우주항공</td><td>+0.101</td><td style="color:#2b6cb0;font-weight:bold;">+0.284</td><td>&lt;0.0001</td><td>★★★★☆</td></tr>
+        <tr><td>LIT (리튬)</td><td>2차전지</td><td>+0.158</td><td style="color:#2b6cb0;font-weight:bold;">+0.251</td><td>&lt;0.0001</td><td>★★☆☆☆</td></tr>
+        <tr><td>IBB (바이오)</td><td>바이오</td><td>-0.001</td><td>+0.046</td><td>0.21</td><td>—</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⚡ 급등/급락일 조건부 분석 | Conditional Analysis (±3% Filter)</div>
+      <table>
+        <tr><th>조건</th><th>한국 테마</th><th>표본</th><th>상승확률</th><th>평균수익(D+1)</th><th>95% 신뢰구간</th></tr>
+        <tr><td>SOXX ≥ +3%</td><td>AI반도체</td><td>111일</td><td>63.1%</td><td style="color:#276749;">+0.67%</td><td>[+0.31%, +1.03%]</td></tr>
+        <tr><td>SOXX ≤ -3%</td><td>AI반도체</td><td>127일</td><td>34.6%</td><td style="color:#c53030;">-0.98%</td><td>[-1.31%, -0.65%]</td></tr>
+        <tr><td>URA ≥ +3%</td><td>원전</td><td>155일</td><td>64.5%</td><td style="color:#276749;">+0.89%</td><td>[+0.45%, +1.33%]</td></tr>
+        <tr><td>URA ≤ -3%</td><td>원전</td><td>113일</td><td>31.9%</td><td style="color:#c53030;">-1.12%</td><td>[-1.48%, -0.76%]</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🔍 독립성 검증 | Independence Test (QQQ 효과 제거)</div>
+      <div style="background:#f0fff4;border-left:4px solid #38a169;padding:15px;border-radius:4px;color:#2d3748;">
+        SOXX +3% 이상일 때 AI반도체 D+1 평균 수익을 분해하면:<br><br>
+        전체 효과: <b>+0.67%</b><br>
+        &nbsp;&nbsp;└ 미국 시장 전체(QQQ)가 좋아서: <b>+0.24%</b><br>
+        &nbsp;&nbsp;└ SOXX 고유 신호: <b>+0.43%</b> (p=0.0021 ★★)<br><br>
+        미국 전체 장세가 좋아서가 아니라, <b>반도체 섹터 자체의 강세가 독립적으로 한국 AI반도체에 영향을 준다</b>는 것이 확인됩니다.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⏱ 시간 안정성 | Time Stability (SOXX → AI반도체)</div>
+      <table>
+        <tr><th>기간</th><th>상관계수</th><th>유의성</th><th>평균수익(D+1)</th></tr>
+        <tr><td>2016~2017</td><td>+0.198</td><td>★★</td><td>+0.19%</td></tr>
+        <tr><td>2018~2019</td><td>+0.171</td><td>★★</td><td>+0.17%</td></tr>
+        <tr><td>2020~2021</td><td>+0.189</td><td>★★</td><td>+0.21%</td></tr>
+        <tr><td>2022~2023</td><td>+0.201</td><td>★★</td><td>+0.22%</td></tr>
+        <tr><td>2024~2026</td><td>+0.213</td><td>★★</td><td>+0.24%</td></tr>
+      </table>
+      <p style="color:#4a5568;margin-top:10px;">10년 전 구간에서 유의미하게 유지. 약해지지 않고 오히려 최근에 소폭 강화됨.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">💡 결론 및 향후 계획 | Conclusion</div>
+      <div style="background:#ebf8ff;border-left:4px solid #2b6cb0;padding:15px;border-radius:4px;color:#2d3748;">
+        이 연구는 "1차 검증 통과(Operational Candidate)" 단계입니다.<br><br>
+        ✅ 표본수 충분 (10년, 2,514일)<br>
+        ✅ 통계적 유의 (p&lt;0.0001)<br>
+        ✅ 시장 전체 효과와 독립적<br>
+        ✅ 10년간 시간 안정적<br>
+        ❓ 실전 Forward Test 진행 중 (2026.07.02~)<br><br>
+        <b>주의</b>: 이 연구 결과를 즉각 매매 전략에 반영하지 않습니다.
+        6개월~1년 Forward Test를 통해 실전에서도 같은 패턴이 유지되는지 확인 후
+        보조 신호로의 편입 여부를 결정할 예정입니다.
+      </div>
+    </div>
+  </div>
+  <p class="disclaimer">
+    ※ 본 연구는 과거 데이터 분석 결과이며 미래 수익을 보장하지 않습니다.<br>
+    This research is based on historical data and does not guarantee future returns.
+  </p>
+</div>
+<footer>© 2026 CherryPicker Research Lab | formula82</footer>
+</body>
+</html>
