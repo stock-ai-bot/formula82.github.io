@@ -19,7 +19,8 @@
   <a href="index.html">소개 | About</a>
   <a href="morning/index.html">아침전망 | Morning</a>
   <a href="theme/index.html">테마분석 | Theme</a>
-  <a href="trades/index.html">매매결과 | Trades</a>
+  <a href="trades/index.html">개별주 | Stocks</a>
+  <a href="etf/index.html">ETF매매 | ETF</a>
   <a href="research/index.html">리서치 | Research</a>
   <a href="philosophy.html">연구철학 | Philosophy</a>
 </nav>
@@ -90,7 +91,8 @@ async function loadRecent() {
   const sections = [
     {name:'아침전망', file:'morning/index.json', emoji:'🌅'},
     {name:'테마분석', file:'theme/index.json', emoji:'🎯'},
-    {name:'매매결과', file:'trades/index.json', emoji:'📈'},
+    {name:'ETF매매', file:'etf/index.json', emoji:'📈'},
+    {name:'개별주', file:'trades/index.json', emoji:'📊'},
     {name:'리서치', file:'research/index.json', emoji:'📊'},
   ];
   const container = document.getElementById('recent-posts');

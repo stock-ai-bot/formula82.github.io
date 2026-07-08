@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF 매매 일지 | CherryPicker ETF Bot</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>🍒 CherryPicker ETF Bot</h1>
+  <p>MAI + Regime + ETF Score Engine 기반 자동매매 일지</p>
+</header>
+<nav>
+  <a href="../index.html">홈 | Home</a>
+  <a href="../morning/index.html">아침전망 | Morning</a>
+  <a href="../theme/index.html">테마분석 | Theme</a>
+  <a href="../trades/index.html">개별주 | Stocks</a>
+  <a href="index.html">ETF매매 | ETF</a>
+  <a href="../research/index.html">리서치 | Research</a>
+</nav>
+<div class="container">
+  <h2 style="color:#fff;margin-bottom:20px;">📈 ETF 매매 일지 | ETF Trading Journal</h2>
+  <div id="post-list"></div>
+</div>
+<script>
+async function loadPosts() {
+  const container = document.getElementById('post-list');
+  try {
+    const r = await fetch('index.json');
+    const posts = await r.json();
+    if (!posts.length) {
+      container.innerHTML = '<div style="color:#7aaa8a;text-align:center;padding:40px;">아직 포스팅이 없습니다.</div>';
+      return;
+    }
+    container.innerHTML = posts.map(p => {
+      const dayColor  = p.day_pct  && p.day_pct.startsWith('+') ? '#ff6b6b' : '#4a9eff';
+      const totColor  = p.total_pct && p.total_pct.startsWith('+') ? '#ff6b6b' : '#4a9eff';
+      return `
+      <div class="post-card" onclick="location.href='${p.file}'">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div class="post-date">${p.date}</div>
+          <div style="font-size:0.85em;color:#7aaa8a;">${p.regime || ''}</div>
+        </div>
+        <div class="post-title">${p.title}</div>
+        <div style="display:flex;gap:20px;margin-top:8px;">
+          <span style="color:${dayColor};font-weight:bold;">당일 ${p.day_pct || '0.00%'}</span>
+          <span style="color:${totColor};font-weight:bold;">누적 ${p.total_pct || '0.00%'}</span>
+        </div>
+        <div class="post-summary">${p.summary || ''}</div>
+        <div style="margin-top:8px;">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    container.innerHTML = '<div style="color:#e53e3e;">로드 실패</div>';
+  }
+}
+loadPosts();
+</script>
+</body>
+</html>
