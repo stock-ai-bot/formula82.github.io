@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "date": "2026-07-10",
+    "file": "etf-20260710.html",
+    "title": "📈 2026-07-10 ETF 매매 일지 | ETF Trading Journal",
+    "summary": "오늘 시장은 상승세를 이어갔지만, 수익률은 미미한 수준이었다. | Today's market continued its upward trend, ...",
+    "day_pct": "+0.03%",
+    "total_pct": "+0.00%",
+    "regime": "BULL",
+    "tags": [
+      "#ETF",
+      "#자동매매",
+      "#BULL"
+    ]
+  }
+]
