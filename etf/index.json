@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-07-13",
+    "file": "etf-20260713.html",
+    "title": "📈 2026-07-13 ETF 매매 일지 | ETF Trading Journal",
+    "summary": "오늘 시장은 예상보다 급격한 하락세를 보이며 불안한 분위기를 이어갔습니다....",
+    "day_pct": "-0.74%",
+    "total_pct": "-0.48%",
+    "regime": "CRASH",
+    "tags": [
+      "#ETF",
+      "#자동매매",
+      "#CRASH"
+    ]
+  },
+  {
     "date": "2026-07-10",
     "file": "etf-20260710.html",
     "title": "📈 2026-07-10 ETF 매매 일지 | ETF Trading Journal",
