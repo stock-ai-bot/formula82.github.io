@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-07-14",
+    "file": "etf-20260714.html",
+    "title": "📈 2026-07-14 ETF 매매 일지 | ETF Trading Journal",
+    "summary": "오늘 시장은 코스피 상승과 코스닥 하락으로 양분된 모습을 보였고, 전체적으로 횡보하는 분위기였습니다....",
+    "day_pct": "-0.69%",
+    "total_pct": "-1.16%",
+    "regime": "SIDEWAYS",
+    "tags": [
+      "#ETF",
+      "#자동매매",
+      "#SIDEWAYS"
+    ]
+  },
+  {
     "date": "2026-07-13",
     "file": "etf-20260713.html",
     "title": "📈 2026-07-13 ETF 매매 일지 | ETF Trading Journal",
