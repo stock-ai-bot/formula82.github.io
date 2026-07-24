@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연구과제 주간 요약 | Research Summary - AI 주식 자동매매 봇</title>
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>🤖 AI 주식 자동매매 봇</h1>
+  <p>평일 오후 3시 30분, AI가 직접 매매한 결과를 공개합니다 | Daily AI stock auto-trading journal</p>
+</header>
+<nav>
+  <a href="../index.html">홈 | Home</a>
+  <a href="../research.html">리서치 | Research</a>
+  <a href="../about.html">소개 | About</a>
+</nav>
+<div class="container">
+  <div class="post-card">
+    <div class="post-date">2026-07-24 | Weekly Research Summary</div>
+    <div class="post-title">🔬 연구과제 주간 요약</div>
+    <div class="post-summary">
+      진입 전략(선별·매수타이밍) 9건, Exit Engine 실험 27건 진행 중입니다.<br>
+      9 entry strategy hypotheses and 27 exit engine experiments in progress.
+    </div>
+
+    <div class="section">
+      <div class="section-title">📌 진입 전략 연구 (선별·매수타이밍)</div>
+      <table>
+        <tr><th>ID</th><th>분류</th><th>상태</th><th>가설</th></tr>
+        
+        <tr>
+          <td>🟡 P001</td>
+          <td>2단계_매수타이밍</td>
+          <td>검증중</td>
+          <td style="font-size:0.9em;color:#4a5568;">장세 전환(SIDEWAYS/DOWN→UP)을 10분 주기 샘플링 대신 30초 단위로 즉시 감지하여 캐시된 후보를 재평가하면, 샘플링 주기 때문에 놓치던 매수 기회가 감소한다.</td>
+        </tr>
+        <tr>
+          <td>⚪ P002</td>
+          <td>1단계_종목선별</td>
+          <td>관찰대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">테마 1위 소속 조건이 테마 평균 점수 기반이라, 테마 평균은 약해도 개별 종목이 압도적으로 강한 경우(대형계약 등 종목 고유 이슈) 매수 기회를 구조적으로 놓친다.</td>
+        </tr>
+        <tr>
+          <td>⚪ P003</td>
+          <td>1단계_기준재정의</td>
+          <td>검토대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">SIDEWAYS 장세 정의를 코스피/코스닥 등락률 기반 점수에서 변동성 기반(ATR 감소, HV20, 볼린저밴드 폭 축소)으로 전환 시 더 정확한 횡보장 포착이 가능하다.</td>
+        </tr>
+        <tr>
+          <td>❔ P004</td>
+          <td>정보수집_보조신호</td>
+          <td>운용검증중</td>
+          <td style="font-size:0.9em;color:#4a5568;">미국 섹터 ETF(SOXX, URA 등) 등락률이 다음날(D+1) 한국 관련 테마 상승률과 유의미한 상관관계를 가진다.</td>
+        </tr>
+        <tr>
+          <td>❔ P005</td>
+          <td>정보수집_보조신호</td>
+          <td>아이디어대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">한국 증시의 구조적 특성으로 인한 미국 신호 대비 과잉반응. 이를 역이용한 기술적 반등 포착 전략.</td>
+        </tr>
+        <tr>
+          <td>❔ P006</td>
+          <td>위험관리_대체전략</td>
+          <td>시뮬레이션대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">CRASH 시 KODEX 인버스2X(122630) 매수로 공매도 전략과 수익 비대칭 해소. 핵심: 가짜 CRASH 필터링</td>
+        </tr>
+        <tr>
+          <td>⚪ P007</td>
+          <td>시장미시구조_전환점감지</td>
+          <td>검토대기</td>
+          <td style="font-size:0.9em;color:#4a5568;">코스피/종목의 하락→반등 전환점을 낙폭둔화+거래량급증+ΔExpectation으로 조기 감지하면, 상승 2~3% 확인 후 진입하는 현재 방식보다 더 높은 EV를 달성할 수 있다. Fast/Slow Expectation 분리 및 레짐별 Time Constant 측정 포함.</td>
+        </tr>
+        <tr>
+          <td>🟡 P008</td>
+          <td>시장미시구조_진입타이밍</td>
+          <td>검증중</td>
+          <td style="font-size:0.9em;color:#4a5568;">체결강도+거래량+VWAP+호가잔량+프로그램순매수+외국인순매수의 동시 발생(시너지점수)이 단일 지표보다 진입 타이밍 EV를 높인다.</td>
+        </tr>
+        <tr>
+          <td>🟡 P009</td>
+          <td>레짐별_운영체제</td>
+          <td>검증중</td>
+          <td style="font-size:0.9em;color:#4a5568;">레짐→선별→미시구조→매수→보유→매도→학습의 단계별 독립 평가 구조에서, 레짐별 행동 기준을 달리하면 전체 EV가 향상된다.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📊 Exit Engine 연구 현황</div>
+      <p style="color:#4a5568;">총 27개 실험 — 무효 1건 · 채택 3건 · 폐기 1건 · 보류 22건</p>
+    </div>
+  </div>
+  <p class="disclaimer">
+    ※ 본 글은 연구 진행 상황 자동 요약이며 투자 수익을 의미하지 않습니다.<br>
+    This is an automated research progress summary, not an investment performance report.
+  </p>
+</div>
+<footer>© 2026 AI 주식 자동매매 봇 | AI Stock Auto-Trading Bot | formula82</footer>
+</body>
+</html>
